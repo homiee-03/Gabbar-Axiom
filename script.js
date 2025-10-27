@@ -1,113 +1,77 @@
-/* --- Mobile Menu Toggle --- */
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+/* ===== SHOW/HIDE MOBILE MENU ===== */
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const icon = hamburger.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-menu li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.querySelector('i').classList.add('fa-bars');
-        hamburger.querySelector('i').classList.remove('fa-times');
+/* Show menu */
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu');
     });
-});
-
-/* --- Typing Effect --- */
-const typingText = document.querySelector('.typing-effect');
-const words = ["SSC CGL", "RRB NTPC", "SSC CPO", "AFCAT", "Defence Exams"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function type() {
-    const currentWord = words[wordIndex];
-    let displayText = '';
-
-    if (isDeleting) {
-        // Deleting
-        displayText = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        // Typing
-        displayText = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    typingText.textContent = displayText;
-
-    let typeSpeed = 150;
-    if (isDeleting) {
-        typeSpeed /= 2; // Faster deleting
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        // Pause at end of word
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        // Move to next word
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-    }
-
-    setTimeout(type, typeSpeed);
 }
 
-// Start typing effect on page load
-document.addEventListener('DOMContentLoaded', type);
+/* Hide menu */
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+    });
+}
+
+/* Hide menu when a link is clicked */
+const navLinks = document.querySelectorAll('.nav__link');
+
+function linkAction() {
+    navMenu.classList.remove('show-menu');
+}
+navLinks.forEach(n => n.addEventListener('click', linkAction));
 
 
-/* --- FAQ Accordion --- */
-const faqItems = document.querySelectorAll('.faq-item');
+/* ===== ADD SHADOW TO HEADER ON SCROLL ===== */
+function scrollHeader() {
+    const header = document.getElementById('header');
+    // When the scroll is greater than 50 viewport height, add the scroll-header class
+    if (this.scrollY >= 50) {
+        header.classList.add('scroll-header');
+    } else {
+        header.classList.remove('scroll-header');
+    }
+}
+window.addEventListener('scroll', scrollHeader);
 
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-        // Check if this item is already active
-        const isActive = item.classList.contains('active');
 
-        // (Optional) Close all other items
-        // faqItems.forEach(otherItem => {
-        //     otherItem.classList.remove('active');
-        //     otherItem.querySelector('i').classList.remove('fa-minus');
-        //     otherItem.querySelector('i').classList.add('fa-plus');
-        // });
+/* ===== SHOW SCROLL UP BUTTON ===== */
+function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 400 viewport height, add the show-scroll class
+    if (this.scrollY >= 400) {
+        scrollUp.classList.add('show-scroll');
+    } else {
+        scrollUp.classList.remove('show-scroll');
+    }
+}
+window.addEventListener('scroll', scrollUp);
 
-        // Toggle current item
-        if (isActive) {
-            item.classList.remove('active');
-            question.querySelector('i').classList.remove('fa-minus');
-            question.querySelector('i').classList.add('fa-plus');
-        } else {
-            item.classList.add('active');
-            question.querySelector('i').classList.remove('fa-plus');
-            question.querySelector('i').classList.add('fa-minus');
+
+/* ===== SMOOTH SCROLL FOR SECTION LINKS ===== */
+// This complements the CSS scroll-behavior for all browsers
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Check if the link is an internal anchor
+        if (link.hash !== "") {
+            e.preventDefault();
+            
+            const hash = link.hash;
+            const targetElement = document.querySelector(hash);
+            
+            if (targetElement) {
+                const headerOffset = document.querySelector('.header').offsetHeight;
+                const elementPosition = targetElement.offsetTop;
+                
+                window.scrollTo({
+                    top: elementPosition - headerOffset,
+                    behavior: "smooth"
+                });
+            }
         }
     });
 });
-
-
-/* --- Scroll Animations --- */
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-animation');
-        } 
-        // Optional: Remove class to re-animate on scroll up
-        // else {
-        //     entry.target.classList.remove('show-animation');
-        // }
-    });
-}, {
-    threshold: 0.1 // 10% dikhne par animate ho
-});
-
-// Observe all elements with animation classes
-const animatedElements = document.querySelectorAll('.anim-fade-in, .anim-slide-in');
-animatedElements.forEach((el) => observer.observe(el));
