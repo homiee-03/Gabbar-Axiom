@@ -1,207 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-CS8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aapka Naam - Govt. Exam Mentor</title>
+    <title>Saurabh Varma - Exam Strategy Mentor</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">The Mentor</a>
-            <ul class="nav-menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#mentorship">Mentorship</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="btn btn-nav">Contact Me</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Saurabh Varma</a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                    <li class="nav__item"><a href="#method" class="nav__link">My System</a></li>
+                    <li class="nav__item"><a href="#guidance" class="nav__link">Guidance</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <i class='bx bx-x nav__close' id="nav-close"></i>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
             </div>
         </nav>
     </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Main Hoon [Aapka Naam]</h1>
-            <p>Aapka Mentor for <span class="typing-effect"></span></p>
-            <a href="#mentorship" class="btn btn-primary btn-hero anim-fade-in">Join My Mentorship Program</a>
-        </div>
-    </section>
+    <main class="main">
+        
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-right">
+                    <h1 class="hero__title">Hi, I’m Saurabh Varma — <br>Your Exam Strategy Mentor.</h1>
+                    <p class="hero__subtitle">
+                        Not just hard work — smart, science-backed learning that actually sticks.
+                    </p>
+                    <a href="#method" class="button">Explore My Scientific Study System</a>
+                </div>
+                
+                <div class="hero__visual" data-aos="fade-left">
+                    <div class="hero__floating-bg"></div>
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/man-working-on-project-from-home-5692471-4759491.png" alt="Saurabh Varma Illustration" class="hero__img">
+                </div>
+            </div>
+            </section>
 
-    <section id="about" class="container">
-        <h2 class="section-title anim-slide-in">About Me</h2>
-        <div class="about-content anim-slide-in">
-            <img src="httpsT://via.placeholder.com/300" alt="Aapka Photo" class="profile-pic">
-            <div>
-                <h3>My Journey</h3>
-                <p>Mera naam [Aapka Naam] hai. Main bhi aapki tarah ek aspirant tha. Saalon ki mehnat aur sahi strategy se maine SSC, Railway aur Defence ke 8 se zyada exams clear kiye hain. Ab mera mission aap jaise students ko guide karna hai taaki aap bhi apni dream job haasil kar sakein.</p>
-                <p>Yeh website maine un sabhi students ke liye banayi hai jo coaching afford nahi kar sakte lekin unmein potential hai. Mere mentorship program se judkar aap meri strategies, notes aur personal guidance prapt kar sakte hain.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements">
-        <div class="container">
-            <h2 class="section-title anim-slide-in">My Achievements (Exams Cracked)</h2>
-            <div class="achievements-grid anim-fade-in">
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>SSC CGL</h3>
-                    <p>Income Tax Inspector / ASO</p>
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">From Aspirant to Mentor</h2>
+                    <p class="section__subtitle">My journey wasn't just about clearing exams; it was about finding a *system*.</p>
                 </div>
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>SSC CHSL</h3>
-                    <p>LDC / PA</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>SSC CPO</h3>
-                    <p>Delhi Police / CAPF SI</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>RRB NTPC</h3>
-                    <p>Station Master / Goods Guard</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>AFCAT</h3>
-                    <p>Flying / Ground Duty</p>
-                </div>
-                <div class="achievement-card">
-                    <i class="fas fa-award"></i>
-                    <h3>Airforce X/Y</h3>
-                    <p>Agniveer Vayu</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="mentorship" class="container">
-        <h2 class="section-title anim-slide-in">My Personal Mentorship Program</h2>
-        <p class="section-subtitle anim-fade-in">Aapko selection tak pahunchane ki zimmedari.</p>
-        <div class="mentorship-features anim-fade-in">
-            <div class="feature-item">
-                <i class="fas fa-user-check"></i>
-                <h4>One-to-One Guidance</h4>
-                <p>Aapki strengths aur weaknesses ke hisab se personal study plan.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-book-open"></i>
-                <h4>Strategic Study Material</h4>
-                <p>Sirf wahi padhein jo exam ke liye zaroori hai. No-nonsense content.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-chart-line"></i>
-                <h4>Mock Test Analysis</h4>
-                <p>Aapke mock scores ko analyze karke improvement areas batana.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-comments"></i>
-                <h4>24/7 Doubt Support</h4>
-                <p>Telegram/WhatsApp par kabhi bhi apne doubts poochein.</p>
-            </div>
-        </div>
-        <a href="#contact" class="btn btn-primary anim-fade-in">Enroll Now</a>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2 class="section-title anim-slide-in">Student Success Stories</h2>
-            <div class="testimonial-grid anim-fade-in">
-                <div class="testimonial-card">
-                    <p>"[Aapka Naam] sir ki guidance best hai. Unki strategy se mera RRB NTPC clear ho gaya. Thank you, sir!"</p>
-                    <div class="student-info">
-                        <img src="https://via.placeholder.com/60" alt="Student photo">
-                        <div>
-                            <h4>Aman Kumar</h4>
-                            <span>Selected in RRB NTPC</span>
-                        </div>
+                
+                <div class="about__container grid">
+                    <div class="about__content" data-aos="fade-right">
+                        <h3>My Story</h3>
+                        <p>Like many of you, I started with stacks of books and endless "daily schedules." I faced failures, but with each attempt, I stopped focusing on *what* to study and started focusing on *how* to learn. I studied memory science and psychology, not just history and math.</p>
+                        <p>After successfully clearing a dozen different competitive exams across SSC, Defence, and Banking, I realized my system wasn't a fluke. It was a repeatable, scientific process. Now, I share that exact system with you.</p>
+                    </div>
+                    
+                    <div class="about__timeline" data-aos="fade-left">
+                        <h3>My Achievements</h3>
+                        <ul class="timeline__list">
+                            <li class="timeline__item">
+                                <i class='bx bxs-check-shield'></i>
+                                <span><b>SSC CGL</b> (2023 & 2024)</span>
+                            </li>
+                            <li class="timeline__item">
+                                <i class='bx bxs-check-shield'></i>
+                                <span><b>SSC CPO, CHSL, GD</b> (Multiple Times)</span>
+                            </li>
+                            <li class="timeline__item">
+                                <i class='bx bxs-plane-alt'></i>
+                                <span><b>AFCAT & Airforce X/Y</b> (Multiple Times)</span>
+                            </li>
+                            <li class="timeline__item">
+                                <i class='bx bxs-badge-check'></i>
+                                <span><b>CDS</b> (Combined Defence Services)</span>
+                            </li>
+                            <li class="timeline__item">
+                                <i class='bx bxs-bank'></i>
+                                <span><b>IBPS PO</b> (Banking)</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <p>"Main English mein bahut weak tha. Sir ke personal notes aur guidance se maine SSC CGL mein accha score kiya."</p>
-                    <div class="student-info">
-                        <img src="https://via.placeholder.com/60" alt="Student photo">
-                        <div>
+            </div>
+        </section>
+
+        <section class="section method" id="method">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">The Science-Backed Study System</h2>
+                    <p class="section__subtitle">Stop wasting time. Start learning efficiently.</p>
+                </div>
+                
+                <div class="method__container grid">
+                    <div class="method__card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class='bx bx-brain method__icon'></i>
+                        <h3 class="method__title">Neuro-Learning</h3>
+                        <p>Understand *how* your brain stores information to make studying 10x more effective.</p>
+                    </div>
+                    <div class="method__card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class='bx bx-recycle method__icon'></i>
+                        <h3 class="method__title">Active Recall</h3>
+                        <p>Ditch passive re-reading. Learn the art of retrieving information to build strong memory traces.</p>
+                    </div>
+                    <div class="method__card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class='bx bx-calendar-check method__icon'></i>
+                        <h3 class="method__title">Spaced Repetition</h3>
+                        <p>A proven schedule for *when* to revise topics, just before you're about to forget them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section guidance" id="guidance">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">My Guidance Platform</h2>
+                    <p class="section__subtitle">Practical strategies, not just motivation.</p>
+                </div>
+                
+                <div class="guidance__container grid">
+                    <article class="guidance__card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c6f9041308a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjUyOXwwfDF8c2VhcmNofDEwfHxteW5kc2V0fGVufDB8fHx8MTcwMTU3MzAyNnww&ixlib=rb-4.0.3&q=80&w=400" alt="" class="guidance__img">
+                        <div class="guidance__content">
+                            <h4>The Mindset Fix</h4>
+                            <p>Breaking the "I can't do it" loop and building the mental framework of a topper.</p>
+                            <a href="#" class="guidance__link">Read More <i class='bx bx-right-arrow-alt'></i></a>
+                        </div>
+                    </article>
+                    <article class="guidance__card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjUyOXwwfDF8c2VhcmNofDR8fHJldmlzaW9ufGVufDB8fHx8MTcwMTU3MzAyN3ww&ixlib=rb-4.0.3&q=80&w=400" alt="" class="guidance__img">
+                        <div class="guidance__content">
+                            <h4>Revision Strategy</h4>
+                            <p>The 3-Step Scientific Revision (SR) method that ensures 90% retention.</p>
+                            <a href="#" class="guidance__link">Watch Now <i class='bx bx-right-arrow-alt'></i></a>
+                        </div>
+                    </article>
+                    <article class="guidance__card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1544928140-619f5866b160?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjUyOXwwfDF8c2VhcmNofDEyfHxmb2N1c3xlbnwwfHx8fDE3MDE1NzMwMjd8MA&ixlib=rb-4.0.3&q=80&w=400" alt="" class="guidance__img">
+                        <div class="guidance__content">
+                            <h4>Smart Note-Making</h4>
+                            <p>Why your notes are failing you, and how to create notes you'll *actually* use.</p>
+                            <a href="#" class="guidance__link">Learn How <i class='bx bx-right-arrow-alt'></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">Trust & Results</h2>
+                    <p class="section__subtitle">See what students are saying.</p>
+                </div>
+                
+                <div class="testimonials__container grid">
+                    <div class="testimonial__card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student photo" class="testimonial__img">
+                        <p>"Saurabh bhai changed how I study. I stopped re-reading and started using Active Recall. My mock test scores increased by 30 marks in one month."</p>
+                        <div class="testimonial__info">
+                            <h4>Aman Singh</h4>
+                            <span>SSC CGL Aspirant</span>
+                            <div class="testimonial__stars">
+                                <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial__card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student photo" class="testimonial__img">
+                        <p>"I always struggled with GS. His Spaced Repetition technique was a game-changer. I finally feel confident in my preparation. Thank you, Saurabh!"</p>
+                        <div class="testimonial__info">
                             <h4>Priya Sharma</h4>
-                            <span>Selected in SSC CGL</span>
-                        </div>
-                    </div>
-                </div>
-                 <div class="testimonial-card">
-                    <p>"Sir ka mock test analysis ka tareeka sabse alag hai. Wo meri choti-choti galtiyan pakad lete they, jisse score boost hua."</p>
-                    <div class="student-info">
-                        <img src="https://via.placeholder.com/60" alt="Student photo">
-                        <div>
-                            <h4>Vikas Singh</h4>
-                            <span>Selected in SSC CPO</span>
+                            <span>CDS Aspirant</span>
+                            <div class="testimonial__stars">
+                                <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="faq" class="container">
-        <h2 class="section-title anim-slide-in">Frequently Asked Questions</h2>
-        <div class="faq-container anim-fade-in">
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Yeh mentorship program kiske liye hai?</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Yeh program beginners aur advanced students, dono ke liye hai. Agar aapne taiyari shuru ki hai ya 2-3 attempts de chuke hain, yeh program aapki strategy ko perfect karne mein madad karega.</p>
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">Let’s Build Your Strategy Together</h2>
+                    <p class="section__subtitle">Ready to transform your preparation? Get in touch.</p>
+                </div>
+                
+                <div class="contact__container grid">
+                    <div class="contact__content" data-aos="fade-right">
+                        <p>I provide one-on-one mentorship and group sessions. If you have questions or want to discuss your preparation, feel free to reach out. The best way to connect is through my social channels.</p>
+                        <div class="contact__socials">
+                            <a href="#" target="_blank" class="contact__social-link"><i class='bx bxl-youtube'></i> YouTube</a>
+                            <a href="#" target="_blank" class="contact__social-link"><i class='bx bxl-telegram'></i> Telegram</a>
+                            <a href="#" target="_blank" class="contact__social-link"><i class='bx bxl-instagram'></i> Instagram</a>
+                        </div>
+                    </div>
+                    
+                    <form action="" class="contact__form" data-aos="fade-left">
+                        <div class="form__group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="What's your biggest challenge?"></textarea>
+                        </div>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
                 </div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Mentorship ki fees kitni hai?</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Fees bahut hi affordable rakhi gayi hai taaki har student ise join kar sake. Current fees aur offers ke liye mujhe Telegram ya WhatsApp par message karein.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Kya aap study material bhi provide karte hain?</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Haan, main apne khud ke banaye hue short notes, current affairs, aur selected practice questions provide karta hoon jo seedhe exam target karte hain.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact">
-        <div class="container anim-fade-in">
-            <h2>Get in Touch</h2>
-            <p>Neeche diye gaye links se mujhse judkar apne doubts poochein ya mentorship ke liye register karein.</p>
-            <div class="social-links">
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:youremail@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-            </div>
+    <footer class="footer">
+        <div class="footer__container container">
+            <p>&copy; 2024 Saurabh Varma. All rights reserved.</p>
+            <p>Designed with a focus on science-backed, effective learning.</p>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 | Designed by [Aapka Naam]. All Rights Reserved.</p>
     </footer>
 
+    <a href="#" class="scroll-up" id="scroll-up">
+        <i class='bx bx-up-arrow-alt'></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script src="script.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50,
+        });
+    </script>
 </body>
-                    </html>
+                                                                                                                     </html>
