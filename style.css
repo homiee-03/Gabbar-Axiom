@@ -1,10 +1,14 @@
 /* --- Global Styles --- */
 :root {
-    --primary-color: #007BFF; /* Main theme color (Blue) */
-    --secondary-color: #f4f4f4; /* Light gray background */
-    --dark-color: #333;
+    --primary-color: #007BFF;
+    --primary-color-dark: #0056b3;
+    --premium-gold: #FFD700;
+    --dark-color: #1a1a1a;
     --light-color: #fff;
-    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+    --bg-light-gray: #f9f9f9;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -13,40 +17,31 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-}
-
 html {
     scroll-behavior: smooth;
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
     color: var(--dark-color);
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #f0f4f8, #d9e2ec, #f0f4f8, #cdd9e5);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    overflow-x: hidden; /* Scroll animation ke liye */
 }
 
-img {
-    max-width: 100%;
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-h1, h2, h3, h4 {
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
+ul { list-style: none; }
+a { text-decoration: none; color: var(--dark-color); }
+img { max-width: 100%; }
+h1, h2, h3, h4 { margin-bottom: 1rem; font-weight: 600; }
 
 .container {
     max-width: 1100px;
@@ -55,27 +50,62 @@ h2 {
 }
 
 section {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    /* Gradient Text */
+    background: linear-gradient(90deg, var(--primary-color), var(--dark-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #555;
+}
+
+/* --- Buttons --- */
 .btn {
     display: inline-block;
-    padding: 12px 24px;
-    background: var(--primary-color);
-    color: var(--light-color);
-    border-radius: 5px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px; /* Rounded button */
     font-weight: 600;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background: #0056b3;
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+.btn-primary:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-5px); /* Hover par upar uthega */
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn-nav {
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 8px 20px;
+}
+.btn-nav:hover {
+    background: var(--primary-color-dark);
 }
 
 /* --- Header / Nav --- */
 header {
-    background: var(--light-color);
-    box-shadow: var(--shadow);
+    /* Glassmorphism Header */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     width: 100%;
@@ -86,67 +116,58 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 75px;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--dark-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.nav-menu {
-    display: flex;
-}
-
-.nav-menu li {
-    padding: 0 1rem;
-}
-
-.nav-menu a {
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-    color: var(--primary-color);
-}
-
-.hamburger {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+.nav-menu { display: flex; align-items: center; }
+.nav-menu li { padding: 0 1rem; }
+.nav-menu a { font-weight: 500; transition: color 0.3s ease; }
+.nav-menu a:hover { color: var(--primary-color); }
+.hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
 
 /* --- Hero Section --- */
 #hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--light-color);
+    color: var(--dark-color);
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
-    margin-bottom: 0.5rem;
 }
-
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-    font-weight: 300;
+}
+.typing-effect {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+/* Typing cursor effect */
+.typing-effect::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
 }
 
 /* --- About Section --- */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
 }
 
@@ -156,12 +177,21 @@ header nav {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: var(--shadow);
-    border: 5px solid var(--primary-color);
+    border: 8px solid var(--light-color);
 }
 
-/* --- Achievements Section --- */
+/* --- Achievements Section (Glassmorphism) --- */
 #achievements {
-    background: var(--secondary-color);
+    /* Yeh background image glass effect ke liye zaroori hai */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+#achievements .section-title {
+    color: var(--light-color); /* Dark bg par light title */
+    background: none;
+    -webkit-text-fill-color: var(--light-color);
 }
 
 .achievements-grid {
@@ -171,21 +201,27 @@ header nav {
 }
 
 .achievement-card {
-    background: var(--light-color);
-    padding: 2rem;
-    text-align: center;
-    border-radius: 10px;
+    /* Glassmorphism */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
     box-shadow: var(--shadow);
+    
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 15px;
+    color: var(--light-color);
     transition: transform 0.3s ease;
 }
 
 .achievement-card:hover {
     transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .achievement-card i {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--premium-gold); /* Gold icon */
     margin-bottom: 1rem;
 }
 
@@ -194,34 +230,123 @@ header nav {
 }
 
 /* --- Mentorship Section --- */
-.section-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: #555;
-}
-
 .mentorship-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .feature-item {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
 }
-
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
 .feature-item i {
     font-size: 2rem;
     color: var(--primary-color);
     margin-top: 5px;
 }
+#mentorship { text-align: center; }
 
-#mentorship {
-    text-align: center;
+/* --- Testimonials Section --- */
+#testimonials {
+    background: var(--bg-light-gray);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.student-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.student-info span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- FAQ Section --- */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--light-color);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question i {
+    font-size: 1rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-answer p {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* JS se add/remove hoga */
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Ya content ke hisab se */
 }
 
 /* --- Contact Section --- */
@@ -230,82 +355,83 @@ header nav {
     color: var(--light-color);
     text-align: center;
 }
-
-#contact h2 {
+#contact .section-title {
     color: var(--light-color);
+    background: none;
+    -webkit-text-fill-color: var(--light-color);
 }
-
+#contact p {
+    font-size: 1.1rem;
+}
 .social-links {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
-
-.social-links a {
+.social-icon {
+    font-size: 1.5rem;
     color: var(--light-color);
-    font-size: 1.2rem;
-    margin: 0 1rem;
-    padding: 10px 15px;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--light-color);
+    border-radius: 50%;
     transition: all 0.3s ease;
 }
-
-.social-links a:hover {
+.social-icon:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
+    transform: translateY(-5px);
 }
 
 /* --- Footer --- */
 footer {
     background: #222;
-    color: var(--light-color);
+    color: #aaa;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
 }
+
+/* --- Scroll Animations --- */
+.anim-fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+.anim-slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+.show-animation {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* --- Responsive (Mobile View) --- */
 @media(max-width: 768px) {
-    h2 {
-        font-size: 2rem;
-    }
+    .section-title { font-size: 2.2rem; }
     
-    .hamburger {
-        display: block;
-    }
-
+    .hamburger { display: block; }
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 75px;
         background: var(--light-color);
         flex-direction: column;
         width: 100%;
         height: 100vh;
         text-align: center;
         transition: 0.3s;
+        align-items: center;
     }
+    .nav-menu.active { left: 0; }
+    .nav-menu li { padding: 1.5rem 0; }
 
-    .nav-menu.active {
-        left: 0;
+    #hero h1 { font-size: 2.5rem; }
+    .about-content { grid-template-columns: 1fr; text-align: center; }
+    .profile-pic { margin: 0 auto 2rem auto; }
+    .mentorship-features { grid-template-columns: 1fr; }
     }
-
-    .nav-menu li {
-        padding: 1.5rem 0;
-    }
-
-    #hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .profile-pic {
-        margin: 0 auto 2rem auto;
-    }
-
-    .mentorship-features {
-        grid-template-columns: 1fr;
-    }
-}
