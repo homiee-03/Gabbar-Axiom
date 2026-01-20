@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Gaurav AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">Gaurav AI</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <button class="button secondary" type="button" data-logout>Logout</button>
+      </div>
+    </nav>
+
+    <section class="banner">
+      <h2>Welcome back</h2>
+      <p>Signed in as <strong data-user-email>user@example.com</strong></p>
+    </section>
+
+    <section class="section dashboard">
+      <div class="tab-buttons">
+        <button class="tab-button" type="button" data-tab="courses">Courses</button>
+        <button class="tab-button" type="button" data-tab="tests">Tests</button>
+        <button class="tab-button" type="button" data-tab="profile">Profile</button>
+      </div>
+
+      <div class="tab-panel" data-panel="courses">
+        <h2 class="section-title">Your Premium Courses</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="course-thumb">Thumbnail Placeholder</div>
+            <h3>AI Starter Pack</h3>
+            <p class="course-price">₹999</p>
+            <button class="button" type="button" data-course="AI Starter Pack" data-price="₹999">Buy Now</button>
+          </div>
+          <div class="card">
+            <div class="course-thumb">Thumbnail Placeholder</div>
+            <h3>AI Pro Skills</h3>
+            <p class="course-price">₹1499</p>
+            <button class="button" type="button" data-course="AI Pro Skills" data-price="₹1499">Buy Now</button>
+          </div>
+          <div class="card">
+            <div class="course-thumb">Thumbnail Placeholder</div>
+            <h3>AI Advanced Mastery</h3>
+            <p class="course-price">₹1500</p>
+            <button class="button" type="button" data-course="AI Advanced Mastery" data-price="₹1500">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="tests">
+        <h2 class="section-title">Tests</h2>
+        <div class="card">
+          <p>New assessments will appear here soon. Stay tuned for premium AI practice tests.</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="profile">
+        <h2 class="section-title">Profile</h2>
+        <div class="card">
+          <p>
+            Manage your learning journey, keep your email updated, and explore new AI tracks when
+            they launch.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

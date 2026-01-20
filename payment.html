@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment | Gaurav AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">Gaurav AI</div>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <section class="section payment">
+      <div class="payment-header">
+        <div>
+          <h2 class="section-title">Complete Your Enrollment</h2>
+          <p class="helper">Finish payment to activate your course instantly.</p>
+        </div>
+        <div class="card payment-summary">
+          <p class="helper">Course</p>
+          <h3 data-payment-course>Course Name</h3>
+          <p class="helper" style="margin-top: 12px;">Price</p>
+          <h3 data-payment-price>₹0</h3>
+        </div>
+      </div>
+
+      <div class="upi-card">
+        <div class="upi-header">
+          <div class="upi-avatar">S</div>
+          <div>
+            <p class="upi-name">SAURABH VERMA</p>
+            <p class="helper">UPI ID: <span data-upi-id>sauravvarmag8@oksbi</span></p>
+          </div>
+        </div>
+        <div class="upi-qr">
+          <img data-upi-qr src="assets/qr-999.svg" alt="UPI QR code" />
+          <div class="upi-badge">GPay</div>
+        </div>
+        <div class="upi-footer">
+          <p class="helper">UPI ID: <span data-upi-id-footer>sauravvarmag8@oksbi</span></p>
+          <p class="upi-amount">Amount: <span data-payment-amount>₹0</span></p>
+        </div>
+      </div>
+
+      <p class="scan-note">Scan to pay with any UPI app.</p>
+    </section>
+  </div>
+
+  <script type="module" src="js/payment.js"></script>
+</body>
+</html>
